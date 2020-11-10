@@ -6,6 +6,7 @@ import azureRepository from "./repositories/azureRepository";
 
 import Header from "./components/Header";
 import BuildsList from "./components/BuildsList";
+import UserPreferences from "./components/UserPreferences";
 
 const ORG_NAME = "nn-apps";
 const PROJ_NAME = "Pulsar";
@@ -43,6 +44,7 @@ function App() {
   return (
     <div className={classes.root}>
       <Header />
+      <UserPreferences />
       <BuildsList />
     </div>
   );

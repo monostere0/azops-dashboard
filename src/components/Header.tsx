@@ -24,7 +24,11 @@ function Header() {
         <Typography className={classes.title} variant="h6">
           AzBuilds Watcher
         </Typography>
-        <IconButton edge="start" color="inherit">
+        <IconButton
+          edge="start"
+          color="inherit"
+          onClick={() => window.dispatchEvent(new Event("settings.dialog"))}
+        >
           <Settings />
         </IconButton>
       </Toolbar>
