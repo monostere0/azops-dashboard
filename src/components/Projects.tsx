@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectEntity from "../entities/ProjectEntity";
 import FolderIcon from "@material-ui/icons/Folder";
 
 import Repositories from "./Repositories";
 
-import {
-  List,
-  ListItem,
-  Divider,
-  ListItemText,
-  ListItemAvatar,
-  Avatar,
-  Typography,
-} from "@material-ui/core";
+import { List, ListItem, Divider, ListItemText } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {

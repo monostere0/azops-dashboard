@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import TimeAgo from "react-timeago";
 import { makeStyles } from "@material-ui/core/styles";
 import PullRequestEntity from "../entities/PullRequestEntity";
-import RepositoryEntity from "../entities/RepositoryEntity";
 import {
   List,
   ListItem,
@@ -9,7 +9,6 @@ import {
   ListItemText,
   ListItemAvatar,
   Avatar,
-  Typography,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,17 +30,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function PullRequests({ repository }: { repository: RepositoryEntity }) {
+function PullRequests({ pullRequests }: { pullRequests: PullRequestEntity[] }) {
   const classes = useStyles();
-  const [pullRequests, setPullRequests] = useState<PullRequestEntity[]>([]);
-
-  useEffect(() => {
-    async function fetchPullRequests() {
-      setPullRequests(await repository.getPullRequests());
-    }
-
-    fetchPullRequests();
-  }, []);
 
   return (
     <List className={classes.root}>
@@ -56,8 +46,10 @@ function PullRequests({ repository }: { repository: RepositoryEntity }) {
             </ListItemAvatar>
             <ListItemText>{pr.title}</ListItemText>
             <ListItemText>{pr.createdBy.displayName}</ListItemText>
-            <ListItemText>Test</ListItemText>
-            <ListItemText>Test</ListItemText>
+            <ListItemText>
+              <TimeAgo date={pr.creationDate} />
+            </ListItemText>
+            <ListItemText>{pr.sourceRefName}</ListItemText>
           </ListItem>
           <Divider />
         </>

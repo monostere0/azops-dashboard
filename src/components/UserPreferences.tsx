@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Dialog,
@@ -7,6 +7,8 @@ import {
   DialogContentText,
   DialogTitle,
   TextField,
+  Checkbox,
+  FormControlLabel,
 } from "@material-ui/core";
 import userSettingsService from "../services/UserSettings";
 
@@ -15,6 +17,10 @@ export default function UserPreferences() {
 
   function handleDialogEvent() {
     setDialogOpen(true);
+  }
+
+  function handleCheckboxChange(event: Record<any, any>) {
+    userSettingsService.showEmptyRepos = event.target.checked;
   }
 
   useEffect(() => {
@@ -29,6 +35,9 @@ export default function UserPreferences() {
 
   const handleClose = () => {
     setDialogOpen(false);
+    setTimeout(() => {
+      window.location.reload();
+    }, 10);
   };
 
   return (
@@ -71,6 +80,17 @@ export default function UserPreferences() {
           label="Azure devops token"
           type="password"
           fullWidth
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              defaultChecked={userSettingsService.showEmptyRepos}
+              onChange={handleCheckboxChange}
+              name="checkedB"
+              color="primary"
+            />
+          }
+          label="Show repositories without opened PRs?"
         />
       </DialogContent>
       <DialogActions>
