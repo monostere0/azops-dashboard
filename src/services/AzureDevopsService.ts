@@ -1,16 +1,11 @@
-import AzureDevopsProjectEntity from "../entities/AzureDevopsProjectEntity";
+import ProjectEntity from "../entities/ProjectEntity";
 
 export default class AzureDevopsService {
-  constructor(
-    private orgName: string,
-    private projNames: string[],
-    private accessToken: string
-  ) {}
+  constructor(private projNames: string[]) {}
 
-  public getProjects(): AzureDevopsProjectEntity[] {
+  public getProjects(): ProjectEntity[] {
     return this.projNames.map(
-      (projName: string) =>
-        new AzureDevopsProjectEntity(this.orgName, projName, this.accessToken)
+      (projName: string) => new ProjectEntity(projName)
     );
   }
 }

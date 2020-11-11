@@ -34,11 +34,12 @@ function App() {
 
   async function fetchData() {
     const [pulsarProject] = azureRepository.getProjects();
-    const { value: pipelines } = await pulsarProject.getPipelines();
-    const run = await pulsarProject.getRuns(pipelines[3].id);
     const repos = await pulsarProject.getRepositories();
-    const prs = await pulsarProject.getPullRequests();
-    console.log(prs);
+
+    const prs = await repos[0].getPullRequests();
+
+    console.log("repos", repos);
+    console.log("prs", prs);
   }
 
   return (

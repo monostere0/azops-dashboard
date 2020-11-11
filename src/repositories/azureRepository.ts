@@ -1,6 +1,6 @@
 import userSettings from "../services/UserSettingsService";
 import AzureDevopsService from "../services/AzureDevopsService";
-import AzureDevopsProjectEntity from "../entities/AzureDevopsProjectEntity";
+import ProjectEntity from "../entities/ProjectEntity";
 
 class AzureRepository {
   public azureDevopsService: AzureDevopsService;
@@ -13,14 +13,10 @@ class AzureRepository {
       throw new Error("User settings mising.");
     }
 
-    this.azureDevopsService = new AzureDevopsService(
-      userSettings.orgName,
-      userSettings.projNames,
-      userSettings.userToken
-    );
+    this.azureDevopsService = new AzureDevopsService(userSettings.projNames);
   }
 
-  public getProjects(): AzureDevopsProjectEntity[] {
+  public getProjects(): ProjectEntity[] {
     return this.azureDevopsService.getProjects();
   }
 }
