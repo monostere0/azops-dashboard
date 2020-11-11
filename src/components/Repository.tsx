@@ -8,7 +8,7 @@ import PullRequestEntity from "../entities/PullRequestEntity";
 
 import userSettings from "../services/UserSettings";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
@@ -30,7 +30,7 @@ function Repositories({ repository }: { repository: RepositoryEntity }) {
     }
 
     fetchPullRequests();
-  }, []);
+  }, [repository]);
 
   return Boolean(userSettings.showEmptyRepos || pullRequests.length > 0) ? (
     <>

@@ -27,7 +27,7 @@ function Repositories({ project }: { project: ProjectEntity }) {
     }
 
     fetchRepositories();
-  }, []);
+  }, [project]);
 
   return (
     <List className={classes.root}>
