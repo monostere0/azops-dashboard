@@ -22,7 +22,7 @@ function Header() {
     <AppBar position="static">
       <Toolbar>
         <Typography className={classes.title} variant="h6">
-          AzBuilds Watcher
+          Az Repos Watcher
         </Typography>
         <IconButton
           edge="start"
