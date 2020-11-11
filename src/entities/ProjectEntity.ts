@@ -5,9 +5,11 @@ import { plainToClass } from "class-transformer";
 
 export default class ProjectEntity {
   private dataFetcher: DataFetcher;
+  public name: string;
 
   constructor(private projName: string) {
     this.dataFetcher = new DataFetcher(projName);
+    this.name = projName;
   }
 
   public async getRepositories(): Promise<RepositoryEntity[]> {

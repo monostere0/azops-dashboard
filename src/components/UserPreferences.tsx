@@ -11,7 +11,6 @@ import {
 import userSettingsService from "../services/UserSettings";
 
 export default function UserPreferences() {
-  const dialogRef = useRef<typeof Dialog>();
   const [isDialogOpen, setDialogOpen] = useState<boolean>(false);
 
   function handleDialogEvent() {
@@ -33,11 +32,7 @@ export default function UserPreferences() {
   };
 
   return (
-    <Dialog
-      ref={dialogRef}
-      onEscapeKeyDown={() => handleClose()}
-      open={isDialogOpen}
-    >
+    <Dialog onEscapeKeyDown={() => handleClose()} open={isDialogOpen}>
       <DialogTitle id="simple-dialog-title">User configuration</DialogTitle>
       <DialogContent>
         <DialogContentText>

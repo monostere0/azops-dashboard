@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import userSettings from "./services/UserSettings";
 import azureRepository from "./repositories/azureRepository";
 
 import Header from "./components/Header";
-import BuildsList from "./components/BuildsList";
+import Projects from "./components/Projects";
 import UserPreferences from "./components/UserPreferences";
+import ProjectEntity from "./entities/ProjectEntity";
 
 const ORG_NAME = "nn-apps";
 const PROJ_NAME = "Pulsar";
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  const [projects, setProjects] = useState<ProjectEntity[]>([]);
 
   useEffect(() => {
     initApp();
@@ -33,10 +35,11 @@ function App() {
   }
 
   async function fetchData() {
-    const [pulsarProject] = azureRepository.getProjects();
-    const repos = await pulsarProject.getRepositories();
-
+    const projects = azureRepository.getProjects();
+    const repos = await projects[0].getRepositories();
     const prs = await repos[0].getPullRequests();
+
+    setProjects(projects);
 
     console.log("repos", repos);
     console.log("prs", prs);
@@ -46,7 +49,7 @@ function App() {
     <div className={classes.root}>
       <Header />
       <UserPreferences />
-      <BuildsList />
+      <Projects projects={projects} />
     </div>
   );
 }
