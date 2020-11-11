@@ -1,4 +1,4 @@
-import DataFetcher, { AzEndpoints } from "../providers/DataFetcher";
+import DataFetcher, { AzEndpoints } from "../services/DataFetcher";
 
 import { Project } from "../types/api";
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import userSettings from "./services/UserSettingsService";
+import userSettings from "./services/UserSettings";
 import azureRepository from "./repositories/azureRepository";
 
 import Header from "./components/Header";

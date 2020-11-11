@@ -1,4 +1,4 @@
-import DataFetcher, { AzEndpoints } from "../providers/DataFetcher";
+import DataFetcher, { AzEndpoints } from "../services/DataFetcher";
 import RepositoryEntity from "../entities/RepositoryEntity";
 import PipelineEntity from "../entities/PipelineEntity";
 import { plainToClass } from "class-transformer";

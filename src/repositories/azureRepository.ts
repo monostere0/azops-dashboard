@@ -1,23 +1,21 @@
-import userSettings from "../services/UserSettingsService";
-import AzureDevopsService from "../services/AzureDevopsService";
+import userSettings from "../services/UserSettings";
 import ProjectEntity from "../entities/ProjectEntity";
 
 class AzureRepository {
-  public azureDevopsService: AzureDevopsService;
+  private projNames: string[];
+
   constructor() {
-    if (
-      !userSettings.orgName ||
-      !userSettings.projNames ||
-      !userSettings.userToken
-    ) {
-      throw new Error("User settings mising.");
+    if (!userSettings.projNames) {
+      throw new Error("Project names setting not set.");
     }
 
-    this.azureDevopsService = new AzureDevopsService(userSettings.projNames);
+    this.projNames = userSettings.projNames;
   }
 
   public getProjects(): ProjectEntity[] {
-    return this.azureDevopsService.getProjects();
+    return this.projNames.map(
+      (projName: string) => new ProjectEntity(projName)
+    );
   }
 }
 

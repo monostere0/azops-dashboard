@@ -8,7 +8,7 @@ import {
   DialogTitle,
   TextField,
 } from "@material-ui/core";
-import userSettingsService from "../services/UserSettingsService";
+import userSettingsService from "../services/UserSettings";
 
 export default function UserPreferences() {
   const dialogRef = useRef<typeof Dialog>();

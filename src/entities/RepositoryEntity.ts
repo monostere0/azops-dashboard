@@ -1,5 +1,5 @@
 import PullRequestEntity from "./PullRequestEntity";
-import DataFetcher, { AzEndpoints } from "../providers/DataFetcher";
+import DataFetcher, { AzEndpoints } from "../services/DataFetcher";
 import { plainToClass } from "class-transformer";
 
 import { Project } from "../types/api";

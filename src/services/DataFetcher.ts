@@ -1,4 +1,4 @@
-import userSettings from "../services/UserSettingsService";
+import userSettings from "./UserSettings";
 
 export enum AzEndpoints {
   PIPELINES = "_apis/pipelines?api-version=6.1-preview.1",
