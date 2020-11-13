@@ -12,8 +12,12 @@ import {
 } from "@material-ui/core";
 import userSettingsService from "../services/UserSettings";
 
-export default function UserPreferences() {
-  const [isDialogOpen, setDialogOpen] = useState<boolean>(false);
+export default function UserPreferences({
+  isOpen = false,
+}: {
+  isOpen: boolean;
+}) {
+  const [isDialogOpen, setDialogOpen] = useState<boolean>(isOpen);
 
   function handleDialogEvent() {
     setDialogOpen(true);
@@ -36,7 +40,7 @@ export default function UserPreferences() {
   const handleClose = () => {
     setDialogOpen(false);
     setTimeout(() => {
-      window.location.reload();
+      window.dispatchEvent(new Event("app.reload"));
     }, 10);
   };
 
@@ -79,6 +83,19 @@ export default function UserPreferences() {
           defaultValue={userSettingsService.userToken}
           label="Azure devops token"
           type="password"
+          fullWidth
+        />
+        <TextField
+          margin="dense"
+          id="updateIntervalDuration"
+          onBlur={(event) =>
+            (userSettingsService.updateIntervalDuration = Number(
+              event.target.value
+            ))
+          }
+          defaultValue={userSettingsService.updateIntervalDuration}
+          label="Board update interval duration (miliseconds)"
+          type="number"
           fullWidth
         />
         <FormControlLabel

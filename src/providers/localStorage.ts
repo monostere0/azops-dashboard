@@ -1,9 +1,9 @@
 export class LocalStorage {
-  public getItem(keyName: string): any {
+  public getItem(keyName: string, defaultValue?: any): any {
     const rawValue = window.localStorage.getItem(keyName);
 
     if (!rawValue) {
-      return null;
+      return defaultValue || null;
     }
 
     try {

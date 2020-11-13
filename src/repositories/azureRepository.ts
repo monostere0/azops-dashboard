@@ -5,10 +5,6 @@ class AzureRepository {
   private projNames: string[];
 
   constructor() {
-    if (!userSettings.projNames) {
-      throw new Error("Project names setting not set.");
-    }
-
     this.projNames = userSettings.projNames;
   }
 

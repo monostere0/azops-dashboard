@@ -32,8 +32,6 @@ export default class RepositoryEntity {
         (build) => build.sourceBranch === pullRequest.sourceRefName
       );
 
-      console.log(pullRequest.build);
-
       return plainToClass(PullRequestEntity, {
         ...pullRequest,
         dataFetcher: this.dataFetcher,

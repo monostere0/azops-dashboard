@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import azureRepository from "./repositories/azureRepository";
 
+import userSettings from "./services/UserSettings";
+
 import Header from "./components/Header";
 import Projects from "./components/Projects";
 import UserPreferences from "./components/UserPreferences";
@@ -17,16 +19,42 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [projects, setProjects] = useState<ProjectEntity[]>([]);
+  const [configMode, setConfigMode] = useState<boolean>(false);
+  let [renderIndex, setRenderIndex] = useState<number>(0);
 
   useEffect(() => {
-    const projects = azureRepository.getProjects();
-    setProjects(projects);
-  }, []);
+    let updateInterval: any = 0;
 
-  return (
-    <div className={classes.root}>
+    function updateProjects() {
+      const projects = azureRepository.getProjects();
+      setProjects(projects);
+    }
+
+    window.addEventListener("app.reload", () => {
+      setRenderIndex(++renderIndex);
+    });
+
+    if (userSettings.isEmpty) {
+      setConfigMode(true);
+    } else {
+      updateProjects();
+      updateInterval = setInterval(
+        updateProjects,
+        userSettings.updateIntervalDuration
+      );
+    }
+
+    return () => {
+      clearInterval(updateInterval);
+    };
+  }, [renderIndex]);
+
+  return configMode ? (
+    <UserPreferences isOpen />
+  ) : (
+    <div key={renderIndex} className={classes.root}>
       <Header />
-      <UserPreferences />
+      <UserPreferences isOpen={false} />
       <Projects projects={projects} />
     </div>
   );

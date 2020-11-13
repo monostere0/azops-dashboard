@@ -5,6 +5,7 @@ class UserSettings {
   private readonly PROJECTS_KEY = "PROJECT_NAMES";
   private readonly USER_PAT = "USER_PAT";
   private readonly SHOW_EMPTY_REPOS = "SHOW_EMPTY_REPOS";
+  private readonly UPDATE_INTERVAL_DURATION = "UPDATE_INTERVAL_DURATION";
 
   constructor(private localStorage: LocalStorage) {}
 
@@ -38,6 +39,20 @@ class UserSettings {
 
   public set showEmptyRepos(value: boolean) {
     this.localStorage.setItem(this.SHOW_EMPTY_REPOS, value);
+  }
+
+  public get updateIntervalDuration(): number {
+    return this.localStorage.getItem(this.UPDATE_INTERVAL_DURATION, 5000);
+  }
+
+  public set updateIntervalDuration(value: number) {
+    this.localStorage.setItem(this.UPDATE_INTERVAL_DURATION, value);
+  }
+
+  public get isEmpty() {
+    return (
+      !this.orgName || !this.projNames.find((x) => x.length) || !this.userToken
+    );
   }
 }
 
