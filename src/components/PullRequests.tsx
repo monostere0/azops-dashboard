@@ -17,13 +17,13 @@ const useStyles = makeStyles<any, string>((theme) => ({
     paddingTop: "0px",
   },
   succeeded: {
-    backgroundColor: "#7ddb96",
+    backgroundColor: theme.palette.success[theme.palette.type],
   },
   failed: {
-    backgroundColor: "#db7d7d",
+    backgroundColor: theme.palette.error[theme.palette.type],
   },
   none: {
-    backgroundColor: "#ccc",
+    backgroundColor: theme.palette.primary[theme.palette.type],
   },
   title: {
     paddingLeft: "10px",
