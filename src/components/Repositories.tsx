@@ -32,7 +32,7 @@ function Repositories({ project }: { project: ProjectEntity }) {
   return (
     <List className={classes.root}>
       {repositories.map((repo: RepositoryEntity) => (
-        <Repository repository={repo} />
+        <Repository key={repo.id} repository={repo} />
       ))}
     </List>
   );

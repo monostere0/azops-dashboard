@@ -5,6 +5,7 @@ export enum AzEndpoints {
   RUNS = "_apis/pipelines/{pipelineId}/runs?api-version=6.1-preview.1",
   REPOSITORIES = "_apis/git/repositories?api-version=6.1-preview.1",
   PULL_REQUESTS = "_apis/git/repositories/{repositoryId}/pullrequests?api-version=6.1-preview.1",
+  BUILDS = "_apis/build/builds?api-version=5.1",
 }
 
 export default class DataFetcher {

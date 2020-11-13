@@ -1,6 +1,7 @@
 import DataFetcher from "../services/DataFetcher";
 
 import { Project } from "../types/api";
+import BuildEntity from "./BuildEntity";
 
 interface Repository {
   id: string;
@@ -111,6 +112,7 @@ export default class PullRequestEntity {
   completionOptions: CompletionOptions;
   supportsIterations: boolean;
   autoCompleteSetBy: AutoCompleteSetBy;
+  build?: BuildEntity;
 
   constructor(private dataFetcher: DataFetcher) {}
 }

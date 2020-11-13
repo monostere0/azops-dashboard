@@ -3,6 +3,7 @@ import DataFetcher, { AzEndpoints } from "../services/DataFetcher";
 import { plainToClass } from "class-transformer";
 
 import { Project } from "../types/api";
+import BuildEntity from "./BuildEntity";
 
 export default class RepositoryEntity {
   public id: string;
@@ -16,18 +17,27 @@ export default class RepositoryEntity {
   public webUrl: string;
   public isFork?: boolean;
 
-  constructor(private dataFetcher: DataFetcher) {}
+  constructor(
+    private dataFetcher: DataFetcher,
+    private builds: BuildEntity[]
+  ) {}
 
   public async getPullRequests(): Promise<PullRequestEntity[]> {
-    const { value: repositories } = await this.dataFetcher.fetch<{
+    const { value: pullRequests } = await this.dataFetcher.fetch<{
       value: PullRequestEntity[];
     }>(AzEndpoints.PULL_REQUESTS, { "{repositoryId}": this.id });
 
-    return repositories.map((pullRequest) =>
-      plainToClass(PullRequestEntity, {
+    return pullRequests.map((pullRequest) => {
+      pullRequest.build = this.builds.find(
+        (build) => build.sourceBranch === pullRequest.sourceRefName
+      );
+
+      console.log(pullRequest.build);
+
+      return plainToClass(PullRequestEntity, {
         ...pullRequest,
         dataFetcher: this.dataFetcher,
-      })
-    );
+      });
+    });
   }
 }
