@@ -1,7 +1,7 @@
 import userSettings from "../services/UserSettings";
 import ProjectEntity from "../entities/ProjectEntity";
 
-class AzureRepository {
+export default class AzureRepository {
   private projNames: string[];
 
   constructor() {
@@ -14,5 +14,3 @@ class AzureRepository {
     );
   }
 }
-
-export default new AzureRepository();

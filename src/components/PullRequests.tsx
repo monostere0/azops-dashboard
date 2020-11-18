@@ -23,7 +23,7 @@ const useStyles = makeStyles<any, string>((theme) => ({
     backgroundColor: theme.palette.error[theme.palette.type],
   },
   none: {
-    backgroundColor: theme.palette.primary[theme.palette.type],
+    backgroundColor: theme.palette.type === "dark" ? "#222" : "#eee",
   },
   title: {
     paddingLeft: "10px",

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import azureRepository from "./repositories/azureRepository";
+import AzureRepository from "./repositories/azureRepository";
 
 import userSettings from "./services/UserSettings";
 
@@ -26,7 +26,7 @@ function App() {
     let updateInterval: any = 0;
 
     function updateProjects() {
-      const projects = azureRepository.getProjects();
+      const projects = new AzureRepository().getProjects();
       setProjects(projects);
     }
 
