@@ -1,0 +1,45 @@
+{
+  "value": [
+    {
+      "id": "3acac92b-958c-443f-8334-ccd6eeaf600e",
+      "name": "k8s",
+      "url": "",
+      "project": {
+        "id": "e4c1111a-156b-4caa-ae7e-1966ee20e859",
+        "name": "Pulsar",
+        "description": "A pulsar is a neutron star, which has huge density. The product we’re building is just a star among the rest of the apps “constellation”, but packs a lot of functionality within a couple of flows.\n\nThe pulsar also emits constant radiation in form of light beams with ranges from milliseconds to seconds. Similar to the payment process, anticipating thousands and more payments per day.",
+        "url": "",
+        "state": "wellFormed",
+        "revision": 134,
+        "visibility": "private",
+        "lastUpdateTime": "2020-07-21T13:13:26.667Z"
+      },
+      "defaultBranch": "refs/heads/master",
+      "size": 15491,
+      "remoteUrl": "",
+      "sshUrl": "git@ssh.dev.azure.com:v3/nn-apps/Pulsar/k8s",
+      "webUrl": ""
+    },
+    {
+      "id": "ee8039d2-e83a-4834-902f-cebbb373acd1",
+      "name": "cards-bff",
+      "url": "",
+      "project": {
+        "id": "e4c1111a-156b-4caa-ae7e-1966ee20e859",
+        "name": "Pulsar",
+        "description": "A pulsar is a neutron star, which has huge density. The product we’re building is just a star among the rest of the apps “constellation”, but packs a lot of functionality within a couple of flows.\n\nThe pulsar also emits constant radiation in form of light beams with ranges from milliseconds to seconds. Similar to the payment process, anticipating thousands and more payments per day.",
+        "url": "",
+        "state": "wellFormed",
+        "revision": 134,
+        "visibility": "private",
+        "lastUpdateTime": "2020-07-21T13:13:26.667Z"
+      },
+      "defaultBranch": "refs/heads/develop",
+      "size": 4230226,
+      "remoteUrl": "",
+      "sshUrl": "git@ssh.dev.azure.com:v3/nn-apps/Pulsar/cards-bff",
+      "webUrl": ""
+    }
+  ],
+  "count": 2
+}

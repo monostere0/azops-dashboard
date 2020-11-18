@@ -1,0 +1,277 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "_links": {
+        "self": {
+          "href": ""
+        },
+        "web": {
+          "href": ""
+        },
+        "sourceVersionDisplayUri": {
+          "href": ""
+        },
+        "timeline": {
+          "href": ""
+        },
+        "badge": {
+          "href": ""
+        }
+      },
+      "properties": {},
+      "tags": [],
+      "validationResults": [],
+      "plans": [{ "planId": "f7b1151b-2c23-4e85-a805-fa31139838a7" }],
+      "triggerInfo": {
+        "ci.sourceBranch": "refs/heads/dev/remove-devices-sorting-key",
+        "ci.sourceSha": "71045f1d6430e5bf6acd569875cbacd960bd41f8",
+        "ci.message": "Remove sorting key from Devices table",
+        "ci.triggerRepository": "ee8039d2-e83a-4834-902f-cebbb373acd1"
+      },
+      "id": 8413,
+      "buildNumber": "20201118.1",
+      "status": "completed",
+      "result": "succeeded",
+      "queueTime": "2020-11-18T15:59:32.141504Z",
+      "startTime": "2020-11-18T15:59:40.7321445Z",
+      "finishTime": "2020-11-18T16:01:37.2943918Z",
+      "url": "",
+      "definition": {
+        "drafts": [],
+        "id": 115,
+        "name": "pulsar-bff-pullrequests",
+        "url": "",
+        "uri": "vstfs:///Build/Definition/115",
+        "path": "\\",
+        "type": "build",
+        "queueStatus": "enabled",
+        "revision": 2,
+        "project": {
+          "id": "e4c1111a-156b-4caa-ae7e-1966ee20e859",
+          "name": "Pulsar",
+          "description": "A pulsar is a neutron star, which has huge density. The product we’re building is just a star among the rest of the apps “constellation”, but packs a lot of functionality within a couple of flows.\n\nThe pulsar also emits constant radiation in form of light beams with ranges from milliseconds to seconds. Similar to the payment process, anticipating thousands and more payments per day.",
+          "url": "",
+          "state": "wellFormed",
+          "revision": 134,
+          "visibility": "private",
+          "lastUpdateTime": "2020-07-21T13:13:26.667Z"
+        }
+      },
+      "buildNumberRevision": 1,
+      "project": {
+        "id": "e4c1111a-156b-4caa-ae7e-1966ee20e859",
+        "name": "Pulsar",
+        "description": "A pulsar is a neutron star, which has huge density. The product we’re building is just a star among the rest of the apps “constellation”, but packs a lot of functionality within a couple of flows.\n\nThe pulsar also emits constant radiation in form of light beams with ranges from milliseconds to seconds. Similar to the payment process, anticipating thousands and more payments per day.",
+        "url": "",
+        "state": "wellFormed",
+        "revision": 134,
+        "visibility": "private",
+        "lastUpdateTime": "2020-07-21T13:13:26.667Z"
+      },
+      "uri": "vstfs:///Build/Build/8413",
+      "sourceBranch": "refs/heads/dev/remove-devices-sorting-key",
+      "sourceVersion": "71045f1d6430e5bf6acd569875cbacd960bd41f8",
+      "queue": {
+        "id": 47,
+        "name": "Hosted Ubuntu 1604",
+        "pool": { "id": 8, "name": "Hosted Ubuntu 1604", "isHosted": true }
+      },
+      "priority": "normal",
+      "reason": "individualCI",
+      "requestedFor": {
+        "displayName": "Engineer",
+        "url": "",
+        "_links": {
+          "avatar": {
+            "href": ""
+          }
+        },
+        "id": "cbdc8db5-cd95-689e-b87b-22cd2e89295c",
+        "uniqueName": "cn34vb@INSIM.BIZ",
+        "imageUrl": "",
+        "descriptor": "aad.Y2JkYzhkYjUtY2Q5NS03ODllLWI4N2ItMjJjZDJlODkyOTVj"
+      },
+      "requestedBy": {
+        "displayName": "Microsoft.VisualStudio.Services.TFS",
+        "url": "",
+        "_links": {
+          "avatar": {
+            "href": ""
+          }
+        },
+        "id": "00000002-0000-8888-8000-000000000000",
+        "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+        "imageUrl": "",
+        "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+      },
+      "lastChangedDate": "2020-11-18T16:01:37.557Z",
+      "lastChangedBy": {
+        "displayName": "Microsoft.VisualStudio.Services.TFS",
+        "url": "",
+        "_links": {
+          "avatar": {
+            "href": ""
+          }
+        },
+        "id": "00000002-0000-8888-8000-000000000000",
+        "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+        "imageUrl": "",
+        "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+      },
+      "orchestrationPlan": { "planId": "f7b1151b-2c23-4e85-a805-fa31139838a7" },
+      "logs": {
+        "id": 0,
+        "type": "Container",
+        "url": ""
+      },
+      "repository": {
+        "id": "ee8039d2-e83a-4834-902f-cebbb373acd1",
+        "type": "TfsGit",
+        "name": "cards-bff",
+        "url": "",
+        "clean": null,
+        "checkoutSubmodules": false
+      },
+      "keepForever": true,
+      "retainedByRelease": false,
+      "triggeredByBuild": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": ""
+        },
+        "web": {
+          "href": ""
+        },
+        "sourceVersionDisplayUri": {
+          "href": ""
+        },
+        "timeline": {
+          "href": ""
+        },
+        "badge": {
+          "href": ""
+        }
+      },
+      "properties": {},
+      "tags": [],
+      "validationResults": [],
+      "plans": [{ "planId": "74540356-96a3-49c6-9274-7d24370ab05e" }],
+      "triggerInfo": {
+        "ci.sourceBranch": "refs/heads/feat/add-orchestration-flow",
+        "ci.sourceSha": "e922ab015c5f87df6dccbae361e1a23ff298dc4a",
+        "ci.message": "Added a generic resolver",
+        "ci.triggerRepository": "ee8039d2-e83a-4834-902f-cebbb373acd1"
+      },
+      "id": 8345,
+      "buildNumber": "20201117.1",
+      "status": "completed",
+      "result": "failed",
+      "queueTime": "2020-11-17T14:26:15.1209917Z",
+      "startTime": "2020-11-17T14:26:23.7500178Z",
+      "finishTime": "2020-11-17T14:27:54.650881Z",
+      "url": "",
+      "definition": {
+        "drafts": [],
+        "id": 115,
+        "name": "pulsar-bff-pullrequests",
+        "url": "",
+        "uri": "vstfs:///Build/Definition/115",
+        "path": "\\",
+        "type": "build",
+        "queueStatus": "enabled",
+        "revision": 2,
+        "project": {
+          "id": "e4c1111a-156b-4caa-ae7e-1966ee20e859",
+          "name": "Pulsar",
+          "description": "A pulsar is a neutron star, which has huge density. The product we’re building is just a star among the rest of the apps “constellation”, but packs a lot of functionality within a couple of flows.\n\nThe pulsar also emits constant radiation in form of light beams with ranges from milliseconds to seconds. Similar to the payment process, anticipating thousands and more payments per day.",
+          "url": "",
+          "state": "wellFormed",
+          "revision": 134,
+          "visibility": "private",
+          "lastUpdateTime": "2020-07-21T13:13:26.667Z"
+        }
+      },
+      "buildNumberRevision": 1,
+      "project": {
+        "id": "e4c1111a-156b-4caa-ae7e-1966ee20e859",
+        "name": "Pulsar",
+        "description": "A pulsar is a neutron star, which has huge density. The product we’re building is just a star among the rest of the apps “constellation”, but packs a lot of functionality within a couple of flows.\n\nThe pulsar also emits constant radiation in form of light beams with ranges from milliseconds to seconds. Similar to the payment process, anticipating thousands and more payments per day.",
+        "url": "",
+        "state": "wellFormed",
+        "revision": 134,
+        "visibility": "private",
+        "lastUpdateTime": "2020-07-21T13:13:26.667Z"
+      },
+      "uri": "vstfs:///Build/Build/8345",
+      "sourceBranch": "refs/heads/feat/add-orchestration-flow",
+      "sourceVersion": "e922ab015c5f87df6dccbae361e1a23ff298dc4a",
+      "queue": {
+        "id": 47,
+        "name": "Hosted Ubuntu 1604",
+        "pool": { "id": 8, "name": "Hosted Ubuntu 1604", "isHosted": true }
+      },
+      "priority": "normal",
+      "reason": "individualCI",
+      "requestedFor": {
+        "displayName": "",
+        "url": "",
+        "_links": {
+          "avatar": {
+            "href": ""
+          }
+        },
+        "id": "2beb9575-f0d6-6e29-80c8-2ed19f75f981",
+        "uniqueName": "",
+        "imageUrl": "",
+        "descriptor": "aad.MmJlYjk1NzUtZjBkNi03ZTI5LTgwYzgtMmVkMTlmNzVmOTgx"
+      },
+      "requestedBy": {
+        "displayName": "Microsoft.VisualStudio.Services.TFS",
+        "url": "",
+        "_links": {
+          "avatar": {
+            "href": ""
+          }
+        },
+        "id": "00000002-0000-8888-8000-000000000000",
+        "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+        "imageUrl": "",
+        "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+      },
+      "lastChangedDate": "2020-11-17T14:27:54.927Z",
+      "lastChangedBy": {
+        "displayName": "Microsoft.VisualStudio.Services.TFS",
+        "url": "",
+        "_links": {
+          "avatar": {
+            "href": ""
+          }
+        },
+        "id": "00000002-0000-8888-8000-000000000000",
+        "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+        "imageUrl": "",
+        "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+      },
+      "orchestrationPlan": { "planId": "74540356-96a3-49c6-9274-7d24370ab05e" },
+      "logs": {
+        "id": 0,
+        "type": "Container",
+        "url": ""
+      },
+      "repository": {
+        "id": "ee8039d2-e83a-4834-902f-cebbb373acd1",
+        "type": "TfsGit",
+        "name": "cards-bff",
+        "url": "",
+        "clean": null,
+        "checkoutSubmodules": false
+      },
+      "keepForever": false,
+      "retainedByRelease": false,
+      "triggeredByBuild": null
+    }
+  ]
+}
